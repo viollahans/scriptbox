@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week11</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0px 5px;
+                }
+               
+                .box {
+                width:200px;
+                height:200px;
+                margin:10px;
+                padding:10px;
+                float: left;
+                border: 1px solid black;
+                justify-content: center;
+                }
+        </style>
+    </head>
+    <body>
+    <div id="disini"></div>
+    </body>
+</html>
+<script>
+    var data = {
+        "products" : [
+            {
+        "name" : "baju baru",
+        "price" : 15000,
+        "sku" : "1",
+        "category" : "baju"
+            },
+            {
+        "name" : "celana baru",
+        "price" : 5000,
+        "sku" : "2",
+        "category" : "celana"
+            },
+            {
+        "name" : "jaket baru",
+        "price" : 10000,
+        "sku" : "3",
+        "category" : "jaket"
+            },
+            ]  
+            }
+
+            var skunya = data.products.filter(function(el) {
+                return el.sku == 1;
+            } );
+            //alert(skunya[0].name + " " + skunya[0].price);
+            
+            var dibawahsepuluh= data.products.filter(function(el) {
+                return el.price <= 10000;
+            } );
+            //alert(dibawahsepuluh.length);
+
+            var hasildibawahsepuluhribu = " ";
+            for (var i = 0; dibawahsepuluh.length > i; i++){
+                hasildibawahsepuluhribu = hasildibawahsepuluhribu + '<div class="box">' + dibawahsepuluh[i].name + "</div>";
+            }
+          //alert(hasildibawahsepuluhribu);
+
+           document.getElementById("disini").innerHTML=hasildibawahsepuluhribu;
+</script>
